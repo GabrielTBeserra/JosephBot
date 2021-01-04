@@ -23,7 +23,7 @@ class AutoRole(commands.Cog):
             await member.add_roles(role)
 
     # Comando para habilitar o auto role
-    @commands.command(brief='This is the brief description', description='This is the full description')
+    @commands.command(brief='This is the brief description', description='Comando para habilitar ou desabilitar o AutoRole')
     async def autorole(self, ctx, *args):
         if len(args) == 0:
             await ctx.send("Informe True ou False")
