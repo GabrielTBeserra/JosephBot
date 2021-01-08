@@ -17,8 +17,20 @@ queue = []
 
 intents = discord.Intents.default()
 intents.members = True
+intents.reactions = True
+intents.messages = True
 
 # Funcao para acessar os comandos de acordo com o prefix do servidor que esta solicitando
+
+
+def filter_id(id):
+    role_id = id
+    role_id = role_id.replace('<', '')
+    role_id = role_id.replace('>', '')
+    role_id = role_id.replace('@', '')
+    role_id = role_id.replace('&', '')
+    role_id = role_id.replace('!', '')
+    return role_id
 
 
 async def determine_prefix(bot, message):
@@ -31,6 +43,7 @@ bot.database = database.Database()
 bot.players = players
 bot.queue = queue
 bot.teste = {}
+bot.filterid = filter_id
 
 
 @bot.event
@@ -49,5 +62,6 @@ if __name__ == "__main__":
                 except Exception as exce:
                     print(
                         f"\nFalha no carregamento do modulo {type(exce).__name__}!\n{exce} ❌")
+
 
 bot.run(os.getenv("TOKEN"))

@@ -46,13 +46,7 @@ class AutoRole(commands.Cog):
             await ctx.send("Informe um cargo valido")
             return
 
-        role_id = args[0]
-        role_id = role_id.replace('<', '')
-        role_id = role_id.replace('>', '')
-        role_id = role_id.replace('@', '')
-        role_id = role_id.replace('&', '')
-        role_id = role_id.replace('!', '')
-
+        role_id = self.bot.filterid(args[0])
         role_list = list(map((lambda a: a.id),
                              ctx.message.guild.roles))
 

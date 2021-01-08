@@ -86,3 +86,42 @@ class Database:
             return data[f'auto_role']
         except:
             pass
+
+    def set_selfrole_messageid(self, id, messageid: int):
+        try:
+            data = self.read_out(id)
+            data[f'self_role_message_id'] = messageid
+            self.write_in(id, data)
+        except:
+            pass
+
+    def get_selfrole_messageid(self, id):
+        try:
+            data = self.read_out(id)
+            return data[f'self_role_message_id']
+        except:
+            pass
+
+    def disable_selfrole(self, id):
+        try:
+            data = self.read_out(id)
+            data[f'self_role_message_id'] = None
+            self.write_in(id, data)
+        except:
+            pass
+
+    def save_emoji_role(self, id, emoji, roleid):
+        try:
+            data = self.read_out(id)
+            new_role = {emoji: int(roleid)}
+            data[f'emoji_roles'] = new_role
+            self.write_in(id, data)
+        except:
+            pass
+
+    def get_role_from_emoji(self, id, emoji):
+        try:
+            data = self.read_out(id)
+            return data[f'emoji_roles'][emoji]
+        except:
+            pass
