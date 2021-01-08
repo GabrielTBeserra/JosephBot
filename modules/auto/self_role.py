@@ -9,7 +9,7 @@ class SelfRole(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(brief='This is the brief description', description='Comando para habilitar ou desabilitar o AutoRole')
+    @commands.command(brief='This is the brief description', description='1')
     async def selfrole(self, ctx, *args):
         if(len(args) == 0):
             return
@@ -19,13 +19,13 @@ class SelfRole(commands.Cog):
             ctx.message.guild.id, int(message_id))
         await ctx.send(f'Voce definiu a mensagem com id {message_id} para self role')
 
-    @commands.command(brief='This is the brief description', description='Comando para habilitar ou desabilitar o AutoRole')
+    @commands.command(brief='This is the brief description', description='1')
     async def disableselfrole(self, ctx, *args):
         self.bot.database.disable_selfrole(
             ctx.message.guild.id)
         await ctx.send(f'Voce desativou o self role')
 
-    @commands.command(brief='This is the brief description', description='Comando para habilitar ou desabilitar o AutoRole')
+    @commands.command(brief='Associar emojis com cargos', description='Comando para adicionar associar emojis com cargos', usage="<role> <emoji>")
     async def setrole(self, ctx, *args):
         message_id = self.bot.database.get_selfrole_messageid(
             ctx.message.guild.id)
