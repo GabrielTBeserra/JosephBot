@@ -12,10 +12,10 @@ Um bot para gerenciamento de servidores
 
 ## Modulos
 
-- [] AutoRole
-- [] Troca de Prefixo
+- [x] AutoRole
+- [x] Troca de Prefixo
 - [] Anti-link
-- [] Self-Role
+- [x] Self-Role
 - [x] Rank
-- [] Database Controller
+- [x] Database Controller
 - [] Guild Info
