@@ -29,7 +29,7 @@ class SelfRole(commands.Cog):
         message_id = self.bot.database.get_selfrole_messageid(
             ctx.message.guild.id)
 
-        if(message_id is NULL or message_id is None):
+        if(message_id is None):
             await ctx.send("Voce nao possui uma mensagem configurada para self role")
             return
 
