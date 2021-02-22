@@ -64,4 +64,10 @@ if __name__ == "__main__":
                         f"\nFalha no carregamento do modulo {type(exce).__name__}!\n{exce} ❌")
 
 
+id = ''
+if os.getenv("TOKEN") != None:
+    id = os.getenv("TOKEN")
+elif os.environ.get("TOKEN") != None:
+    id = os.environ.get("TOKEN")
+
 bot.run(os.getenv("TOKEN"))
