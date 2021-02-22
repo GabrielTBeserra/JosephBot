@@ -70,4 +70,4 @@ if os.getenv("TOKEN") != None:
 elif os.environ.get("TOKEN") != None:
     id = os.environ.get("TOKEN")
 
-bot.run(os.getenv("TOKEN"))
+bot.run(id)
