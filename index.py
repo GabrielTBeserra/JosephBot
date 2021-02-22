@@ -65,6 +65,9 @@ if __name__ == "__main__":
 
 
 id = ''
+print(os.getenv("TOKEN"))
+print(os.environ.get("TOKEN"))
+
 if os.getenv("TOKEN") != None:
     id = os.getenv("TOKEN")
 elif os.environ.get("TOKEN") != None:
