@@ -33,12 +33,17 @@ def filter_id(id):
     return role_id
 
 
+game = discord.Game("twitch.tv/1Urso")
+
+
 async def determine_prefix(bot, message):
     return bot.database.read_out(message.guild.id)['prefix']
 
 # Definicao das variavis
 bot = commands.Bot(command_prefix=determine_prefix,
                    case_insensitive=True, intents=intents)
+bot.change_presence(status=discord.Status.online, activity=game)
+
 bot.database = database.Database()
 bot.players = players
 bot.queue = queue

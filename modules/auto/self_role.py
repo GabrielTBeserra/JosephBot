@@ -51,7 +51,7 @@ class SelfRole(commands.Cog):
         message_id = self.bot.database.get_selfrole_messageid(
             payload.guild_id)
 
-        if(message_id is NULL or message_id is None):
+        if(message_id is None):
             return
 
         if int(message_id) == int(payload.message_id):
@@ -67,7 +67,7 @@ class SelfRole(commands.Cog):
         message_id = self.bot.database.get_selfrole_messageid(
             payload.guild_id)
 
-        if(message_id is NULL or message_id is None):
+        if(message_id is None):
             return
 
         if int(message_id) == int(payload.message_id):
